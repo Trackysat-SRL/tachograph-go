@@ -6,9 +6,12 @@ to parse real-world `.ddd` files produced by firmware variants that
 upstream does not yet handle.
 
 - **Upstream base:** `v0.17.3`
-- **Fork location:** `<FORK_URL>` *(to be filled once the fork is published)*
-- **Fork tag consumed by ddd-parser:** `v0.17.3-crono.1` *(pending push)*
-- **Consumer:** [`ddd-parser`](../..) via `replace` directive in [`go.mod`](../../go.mod)
+- **Fork location:** [github.com/Trackysat-SRL/tachograph-go](https://github.com/Trackysat-SRL/tachograph-go)
+- **Fork tag consumed by ddd-parser:** `v0.17.3-crono.1`
+- **Consumer:** `ddd-parser` via `replace` directive in its `go.mod`:
+  ```
+  replace github.com/way-platform/tachograph-go => github.com/Trackysat-SRL/tachograph-go v0.17.3-crono.1
+  ```
 
 ## Patches
 
@@ -102,7 +105,7 @@ cd ../..
 go get github.com/way-platform/tachograph-go@vX.Y.Z
 # Update go.mod:
 #   require github.com/way-platform/tachograph-go vX.Y.Z
-#   replace github.com/way-platform/tachograph-go => <FORK_URL> vX.Y.Z-crono.1
+#   replace github.com/way-platform/tachograph-go => github.com/Trackysat-SRL/tachograph-go vX.Y.Z-crono.1
 go build ./...
 ./ddd-parser.exe -input ./input -output ./output   # smoke test on real files
 ```
